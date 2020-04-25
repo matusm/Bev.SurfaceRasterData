@@ -16,6 +16,7 @@ namespace Bev.SurfaceRasterData
         public double Y { get; set; }
         public double Z { get; set; }
 
+        // this is a specialized ordering schema usefull for profile data only 
         public int CompareTo(object obj)
         {
             Point3D objc = obj as Point3D;

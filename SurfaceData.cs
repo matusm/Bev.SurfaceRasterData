@@ -45,6 +45,18 @@ namespace Bev.SurfaceRasterData
 
         #region Methods
 
+        public void ClearData(double value)
+        {
+            ResetRunningIndex();
+            for (int i = 0; i < NumberOfPointsPerProfile; i++)
+            {
+                for (int j = 0; j < NumberOfProfiles; j++)
+                {
+                    zValues[i, j] = value;
+                }
+            }
+        }
+
         // the hight data is filled up point by point in the raster data array
         // this is a slow process but compatible with usual file parsing techniques
         public void FillUpData(double value)
