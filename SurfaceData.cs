@@ -35,6 +35,8 @@ namespace Bev.SurfaceRasterData
         public double XOffset { get; set; }
         public double YOffset { get; set; }
         public double ZOffset { get; set; }
+        public double ScanFieldDimensionX => XScale * (NumberOfPointsPerProfile - 1);
+        public double ScanFieldDimensionY => YScale * (NumberOfProfiles - 1);
         public bool IsMetricUnit { get; set; }
         public string Description { get; set; }
         public string Manufacturer { get; set; }
