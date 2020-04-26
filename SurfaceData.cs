@@ -17,11 +17,12 @@ namespace Bev.SurfaceRasterData
             NumberOfProfiles = numProfiles;
             zValues = new double[NumberOfPointsPerProfile, NumberOfProfiles];
             SetPropertiesToDefault();
-            ResetRunningIndex();
+            ClearData(double.NaN);
         }
         #endregion
 
         #region Properties
+        public bool IsDataFilled => (runningIndex >= NumberOfPointsPerProfile * NumberOfProfiles);
         public int NumberOfPointsPerProfile { get; private set; } // NumPoints
         public int NumberOfProfiles { get; private set; } // NumProfiles
         public double XScale { get; set; }
