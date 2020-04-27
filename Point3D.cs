@@ -12,6 +12,8 @@ namespace Bev.SurfaceRasterData
             Z = z;
         }
 
+        public Point3D(Point3D point) : this(point.X, point.Y, point.Z) { }
+
         public double X { get; set; }
         public double Y { get; set; }
         public double Z { get; set; }
