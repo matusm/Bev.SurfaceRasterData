@@ -10,7 +10,6 @@ namespace Bev.SurfaceRasterData
         private int runningIndex;
         private const double invalidValue = double.NaN;
 
-        #region Ctor
         public SurfaceData(int numPoints, int numProfiles)
         {
             NumberOfPointsPerProfile = numPoints;
@@ -19,9 +18,7 @@ namespace Bev.SurfaceRasterData
             SetPropertiesToDefault();
             ClearData(double.NaN);
         }
-        #endregion
 
-        #region Properties
         public bool IsDataComplete => (runningIndex >= NumberOfPointsPerProfile * NumberOfProfiles);
         public int NumberOfPointsPerProfile { get; private set; } // NumPoints
         public int NumberOfProfiles { get; private set; } // NumProfiles
@@ -44,9 +41,6 @@ namespace Bev.SurfaceRasterData
         public DateTime? CreateDate { get; set; }
         public DateTime? ModifyDate { get; set; }
         public Dictionary<string, string> MetaData { get; set; }
-        #endregion
-
-        #region Methods
 
         public void ClearData(double value)
         {
@@ -116,9 +110,6 @@ namespace Bev.SurfaceRasterData
             return new Point3D(xCoordinate, yCoordinate, GetValueFor(pointIndex, profileIndex));
         }
 
-        #endregion
-
-        #region Private stuff
 
         private void ResetRunningIndex()
         {
@@ -141,6 +132,5 @@ namespace Bev.SurfaceRasterData
             ModifyDate = null;
         }
 
-        #endregion
     }
 }

@@ -30,7 +30,7 @@ namespace Bev.SurfaceRasterData
         public override string ToString()
         {
             CultureInfo.CurrentCulture = CultureInfo.InvariantCulture;
-            return $"[Point3D - X:{X.ToString()} Y:{Y.ToString()} Z:{Z.ToString()}]";
+            return $"[Point3D - X:{X} Y:{Y} Z:{Z}]";
         }
     }
 }
